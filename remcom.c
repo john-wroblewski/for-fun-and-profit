@@ -2,7 +2,7 @@
 /*  This program attempts to remove all comments from a C/C+ source file, line-by-line */
 /*  while placing the generated comment-less text into a new file */
 
-/* john wroblewski jwroblewski44 [at] yahoo [dot] com */
+/* john wroblewski wroblewski2 [at] wisc [dot] edu */
 /* exercise from the c programming language by K&R ch 1 */
 
 /* Interface: accepts filename as argument, produces new file titled 'source_no_comments.c' in same dir */
