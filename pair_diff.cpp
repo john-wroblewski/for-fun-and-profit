@@ -27,7 +27,7 @@ struct capsule * diff_pair(vector<int> list, int diff)
 
   for(auto &x: list)
   {
-    if(table[abs(x - diff)])
+    if(x > diff && table[(x - diff)])
     {
       ret->solution_count++;
       ret->solution_pairs.push_back((make_pair(abs(x - diff), x)));
