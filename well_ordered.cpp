@@ -1,5 +1,5 @@
 /*
- * Print all well ordered numbers of length n, where 0 < n < 10.
+ * Print all well ordered numbers of length n, where 1 <= n <= 10.
  */
 
 #include <iostream>
@@ -46,7 +46,7 @@ int main(int argc, char *argv[]){
 
   int n = atoi(argv[1]);
 
-  if(n < 1 || n > 9)
+  if(n < 1 || n > 10)
   {
     cout << "oops input out of range" << endl;
     return 2;
