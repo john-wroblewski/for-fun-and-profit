@@ -1,5 +1,5 @@
-#ifndef _TOOLS_H_
-#define _TOOLS_H_
+#ifndef _LINKEDLIST_H_
+#define _LINKEDLIST_H_
 
 typedef unsigned int uint;
 
@@ -14,4 +14,4 @@ struct ll_node * ll_search(void *, struct ll_node *);           // search list f
 struct ll_node * ll_delete(struct ll_node *, struct ll_node *); // removes node from list
 void             freelist(struct ll_node *);                    // free every node in list
 
-#endif // _TOOLS_H__
+#endif // _LINKEDLIST_H__
