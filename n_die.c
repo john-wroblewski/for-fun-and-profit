@@ -1,7 +1,6 @@
 /*
- * I wrote this during a probability course I was taking where we were learning about expected value.
  * Probability allows us to calculate the expected number of rolls of die it takes to have a certain side land facing up.
- * This code was to empirically prove to myself that the math checked out. It turns out the math is scarely accurate.
+ * This code was to empirically prove to myself that the math checked out.
  */
 
 #include <stdio.h>
