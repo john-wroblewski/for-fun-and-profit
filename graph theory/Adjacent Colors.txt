@@ -1,5 +1,5 @@
 Problem: Given an mxn grid, where each square in the grid has a given color, find the number of squares
-		in the largest connected group.
+	 in the largest connected group.
 
 eg
 
