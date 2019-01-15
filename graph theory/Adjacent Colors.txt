@@ -5,10 +5,10 @@ eg
 
    -----------------
    | b | g | g | r |	has the following largest connected group size
-   |---|---|---|---|  for each color:
+   |---|---|---|---|    for each color:
    | b | r | b | b |                    b = 7
    |---|---|---|---|                    g = 2
-   | r | b | r | g |	                  r = 4
+   | r | b | r | g |	                r = 4
    |---|---|---|---|	note that diagonal connections are valid
    | b | r | b | g |
    |---|---|---|---|
@@ -22,8 +22,8 @@ exist between connected squares. We represent the graph using adjacency lists.
 The following is the struct used for a graph node:
 
 struct node {
-   enum color;			        // denotes the color of the square in the grid
-   bool char visited;	      // true if node has been visited, false if not
+   enum color;			// denotes the color of the square in the grid
+   bool char visited;	        // true if node has been visited, false if not
    struct node * neighbors;	// linked list of the neighbors, NULL if node has no neighbors
 }
 
@@ -37,8 +37,8 @@ changed from inside a function call on previously dequeued node of a different c
 
 // Algorithm [helper algorithm for main algorithm below] // 
 
-unsigned int max[colors]	// global array containing current largest group size per
-				                  // color, indexed by color
+unsigned int max[colors]  // global array containing current largest group size per
+			  // color, indexed by color
 color_count_prime(G,n)
 
   q_same = create_queue()
