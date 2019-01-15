@@ -1,0 +1,94 @@
+Problem: Given an mxn grid, where each square in the grid has a given color, find the number of squares
+		in the largest connected group.
+
+eg
+
+   -----------------
+   | b | g | g | r |	has the following largest connected group size
+   |---|---|---|---|  for each color:
+   | b | r | b | b |                    b = 7
+   |---|---|---|---|                    g = 2
+   | r | b | r | g |	                  r = 4
+   |---|---|---|---|	note that diagonal connections are valid
+   | b | r | b | g |
+   |---|---|---|---|
+
+
+Solutiion:
+
+Model the grid as a undirected graph, where each square is a node and edges
+exist between connected squares. We represent the graph using adjacency lists.
+
+The following is the struct used for a graph node:
+
+struct node {
+   enum color;			        // denotes the color of the square in the grid
+   bool char visited;	      // true if node has been visited, false if not
+   struct node * neighbors;	// linked list of the neighbors, NULL if node has no neighbors
+}
+
+We use a technique that is essentially a modified BFS, maintaing two different queue's.
+One queue stores nodes to be explored of the same color as the input node, or just
+the "current color". The other queue holds any discovered nodes of a different color, that
+at time of discovery haven't yet been visited. We first process all nodes of the current
+color, then finish by calling the function all nodes in "q_diff" that are unvisited at the
+time of dequeue'ing. We check again at time of dequeue because the visit status could have
+changed from inside a function call on previously dequeued node of a different color.
+
+// Algorithm [helper algorithm for main algorithm below] // 
+
+unsigned int max[colors]	// global array containing current largest group size per
+				                  // color, indexed by color
+color_count_prime(G,n)
+
+  q_same = create_queue()
+  q_diff = create_queue()
+
+  int count = 1
+  n.visited = true
+
+  q_same.enqueue(n)
+
+  while(q_same.empty() == false)
+  {
+    node = q_same.dequeue()
+    for_all(v in node.neighbors)
+    {
+      if(v.visited == false)
+      {
+        if(v.color == n.color)
+        {
+          count++
+          v.visited == true
+          q_same.enqueue(v)
+        }
+        else
+        {
+          q_diff.enqueue(v)
+        }
+      }
+    }
+  }
+
+  if(count > max[n.color])
+    max[n.color] = count
+
+  while(q_diff.empty() == false)
+  {
+    node = q_diff.dequeue()
+    if(node.visited == false)
+      color_count_prime(G, node)
+  }
+
+// Algorithm // [main algorithm]
+
+color_count(G)
+
+  color_count_prime(G,1)
+
+  int largest = 0
+  for_all(entries, x, in max)
+    if(x > largest)
+      largest = x
+
+  return largest
