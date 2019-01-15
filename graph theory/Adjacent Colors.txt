@@ -92,3 +92,12 @@ color_count(G)
       largest = x
 
   return largest
+
+
+*Alternative Solution*
+
+1. Set up the problem again as an undirected graph like above, but only create edges between nodes with the same color.
+   Or if we have to use the same graph as above, delete any edges between nodes of different colors. Each node is marked
+   as visited or not. Iterate over the list of nodes, calling a graph search function which counts the number of nodes 
+   in the connected segment on any node not visited. Thus once the search function returns, it has marked any visited node as
+   such, and we refrain from counting the same connected segment twice.
