@@ -1,9 +1,9 @@
 Problem: Determine if a directed graph has a universal sink.
 
 Solution:  // below are two different algorithms, depending on the representation of the graph.
-	         // both run in O(|V|).
+	   // both run in O(|V|).
 
-if the input is of type adjacency_list
+if the input is of type adjacency_list (assuming we use a list with constant lookup times, like array or hash table)
 	1. traverse the list looking for a node with an empty edge list, ie adj[i].list == NULL
 	2. if no such node exists, return false
 	3. if one does exist, say node w, check that each other node has an edge going into w
