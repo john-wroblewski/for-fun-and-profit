@@ -48,5 +48,7 @@ int main(){
   for(auto &x: cap->solution_pairs)
     cout << '<' << x.first << ',' << x.second << '>' << endl;
 
+  free(cap);
+  
   return 0;
 }
